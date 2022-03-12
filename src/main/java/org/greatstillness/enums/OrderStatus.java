@@ -1,4 +1,6 @@
 package org.greatstillness.enums;
 
-public class OrderStatus {
+public enum OrderStatus {
+    CREATION,
+    PAID,
 }
