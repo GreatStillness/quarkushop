@@ -42,7 +42,7 @@ public class CustomerResource {
     }
 
     @DELETE
-    @Path("{id}")
+    @Path("/{id}")
     public void delete(@PathParam("id") Long id) {
         this.customerService.delete(id);
     }

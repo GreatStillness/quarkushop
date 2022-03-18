@@ -1,5 +1,6 @@
 package org.greatstillness.boundary.contollers;
 
+import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 import org.greatstillness.control.dtos.ReviewDto;
 import org.greatstillness.control.services.ReviewService;
 
@@ -8,6 +9,7 @@ import javax.ws.rs.*;
 import java.util.List;
 
 @Path("/reviews")
+@Tag(name = "reviews", description = "All the reviews methods")
 public class ReviewResource {
 
     @Inject

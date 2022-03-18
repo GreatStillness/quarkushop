@@ -31,7 +31,6 @@ public class OrderResource {
     }
 
     @POST
-    @Path("/{id}")
     public OrderDto create(OrderDto orderDto) {
         return this.orderService.create(orderDto);
     }
