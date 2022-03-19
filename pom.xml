@@ -6,6 +6,7 @@
   <artifactId>quarkushop</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <properties>
+    <!-- Versions -->
     <compiler-plugin.version>3.10.1</compiler-plugin.version>
     <failsafe.useModulePath>false</failsafe.useModulePath>
     <maven.compiler.release>17</maven.compiler.release>
@@ -16,6 +17,10 @@
     <quarkus.platform.version>2.7.5.Final</quarkus.platform.version>
     <surefire-plugin.version>3.0.0-M5</surefire-plugin.version>
     <lombok.version>1.18.22</lombok.version>
+    <!-- Sonar -->
+    <sonar.organization>greatstillness</sonar.organization>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    <sonar.projectKey>GreatStillness_quarkushop</sonar.projectKey>
   </properties>
   <dependencyManagement>
     <dependencies>
