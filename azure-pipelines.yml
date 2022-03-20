@@ -17,9 +17,9 @@ steps:
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
       goals: 'verify sonar:sonar'
   - task: Docker@2
-    displayName: 'Docker Multistage Build' ①
+    displayName: 'Docker Multistage Build'
     inputs:
-      containerRegistry: 'nebrass@DockerHub' ③
+      containerRegistry: 'nebrass@DockerHub'
       repository: 'nebrass/quarkushop-monolithic-application'
       command: 'build'
       Dockerfile: '**/Dockerfile.multistage'
@@ -28,8 +28,8 @@ steps:
         $(Build.BuildId)
         latest
   - task: Docker@2
-    displayName: 'Push Image to DockerHub' ②
+    displayName: 'Push Image to DockerHub'
     inputs:
-      containerRegistry: 'nebrass@DockerHub' ③
+      containerRegistry: 'nebrass@DockerHub'
       repository: 'nebrass/quarkushop-monolithic-application'
       command: 'push'
