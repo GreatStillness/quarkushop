@@ -9,7 +9,7 @@ import java.time.Instant;
 @Getter
 @Setter
 @MappedSuperclass
-@EntityListeners(AuditingEntityListener.class)
+//@EntityListeners(AuditingEntityListener.class)
 public abstract class AbstractEntity {
 
     @Id
@@ -21,4 +21,17 @@ public abstract class AbstractEntity {
 
     @Column(name = "last_modified_date")
     private Instant lastModifiedDate;
+
+    @PrePersist
+    void preCreate() {
+        Instant now = Instant.now();
+        setCreatedDate(now);
+        setLastModifiedDate(now);
+    }
+
+    @PreUpdate
+    void preUpdate() {
+        Instant now = Instant.now();
+        setLastModifiedDate(now);
+    }
 }
